@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#ffdad6",
+                    "inverse-surface": "#e5e2e1",
+                    "inverse-on-surface": "#313030",
+                    "surface-container": "#201f1f",
+                    "surface-dim": "#131313",
+                    "surface-bright": "#3a3939",
+                    "secondary": "#d0bcff",
+                    "inverse-primary": "#005ac2",
+                    "error": "#ffb4ab",
+                    "on-secondary-container": "#c4abff",
+                    "on-primary-fixed": "#001a42",
+                    "primary-container": "#4d8eff",
+                    "on-error": "#690005",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-high": "#2a2a2a",
+                    "outline": "#8c909f",
+                    "on-secondary": "#3c0091",
+                    "on-primary-fixed-variant": "#004395",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#ffb786",
+                    "outline-variant": "#424754",
+                    "on-tertiary-fixed-variant": "#723600",
+                    "on-tertiary-container": "#461f00",
+                    "on-secondary-fixed": "#23005c",
+                    "primary": "#adc6ff",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "background": "#131313",
+                    "surface": "#131313",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-surface": "#e5e2e1",
+                    "on-primary-container": "#00285d",
+                    "tertiary-container": "#df7412",
+                    "surface-variant": "#353534",
+                    "on-surface-variant": "#c2c6d6",
+                    "surface-container-highest": "#353534",
+                    "secondary-container": "#571bc1",
+                    "on-tertiary-fixed": "#311400",
+                    "surface-tint": "#adc6ff",
+                    "on-primary": "#002e6a",
+                    "on-background": "#e5e2e1",
+                    "primary-fixed": "#d8e2ff",
+                    "tertiary-fixed": "#ffdcc6",
+                    "surface-container-low": "#1c1b1b",
+                    "secondary-fixed": "#e9ddff",
+                    "on-tertiary": "#502400",
+                    "tertiary": "#ffb786"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #131313; }
+        .glass-panel {
+            background: rgba(28, 27, 27, 0.7);
+            backdrop-filter: blur(12px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface antialiased overflow-x-hidden">
+<!-- Top Navigation (Shell suppressed for specific project view per hierarchy) -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-950/70 backdrop-blur-xl transition-all duration-300">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto font-headline tracking-tight">
+<div class="text-xl font-black tracking-tighter text-neutral-50">ARCHITECT</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-neutral-400 hover:text-neutral-100 transition-colors duration-300" href="#">Work</a>
+<a class="text-neutral-400 hover:text-neutral-100 transition-colors duration-300" href="#">Stack</a>
+<a class="text-neutral-400 hover:text-neutral-100 transition-colors duration-300" href="#">About</a>
+<a class="text-neutral-400 hover:text-neutral-100 transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-blue-400">code</span>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-32">
+<!-- Back Navigation -->
+<div class="max-w-7xl mx-auto px-6 mb-12">
+<a class="group inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors font-medium" href="#">
+<span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                Back to Work
+            </a>
+</div>
+<!-- Hero Section -->
+<header class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-24">
+<div class="lg:col-span-8">
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl lg:text-8xl tracking-tighter text-white mb-6">
+                    NeuralFlow <br/>Systems
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">
+                    A distributed real-time processing engine for high-throughput neural telemetry data.
+                </p>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6 lg:pb-4">
+<div class="flex gap-4">
+<a class="flex-1 bg-primary-container text-on-primary-container px-6 py-4 text-center font-bold rounded hover:shadow-[0_0_20px_rgba(173,198,255,0.3)] transition-all" href="#">
+                        Live Demo
+                    </a>
+<a class="flex items-center justify-center border border-outline-variant/20 px-4 rounded hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</a>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg border-l-4 border-primary">
+<span class="text-xs uppercase tracking-widest text-primary font-bold block mb-1">Status</span>
+<span class="text-on-surface">V2.4 Stable — Enterprise Ready</span>
+</div>
+</div>
+</header>
+<!-- Main Project Visual -->
+<section class="max-w-7xl mx-auto px-6 mb-32">
+<div class="relative aspect-video w-full overflow-hidden rounded-xl bg-surface-container shadow-2xl">
+<img class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700" data-alt="Futuristic glowing server racks in a dark data center with teal and magenta light trails" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOXjQK3s3JXbjHKijP86mIdkEThuf2IOrnIazwfXrhCJglj5gy5mDvfdgtJcjwm7-yZjMOpz5ZwXB9Sk-R7_-Ge6aZnxlV9L0GUGEYOi49ARnqQD8ufRlZkkqsMSGwH272tYDA1dPP6ybNJnvUxzXxYz-8QEzxPQVOTPtJlSut6BohjXPD7oCWUisekwl59BY2oevE65ygTt15spr8OCZ1eBUTTZbIGbWMSiNp-2_1aNPPFJa3FM03If4No0P37bO9FZulNu-9GOw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-40"></div>
+</div>
+</section>
+<!-- Project Details: The Core Narrative -->
+<section class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 mb-40">
+<div class="lg:col-span-4">
+<h2 class="font-headline text-3xl font-bold mb-8 flex items-center gap-3">
+<span class="w-8 h-[2px] bg-primary"></span>
+                    Tech Stack
+                </h2>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-highest text-primary-fixed-dim text-xs font-semibold rounded uppercase tracking-wider">Rust</span>
+<span class="px-3 py-1 bg-surface-container-highest text-primary-fixed-dim text-xs font-semibold rounded uppercase tracking-wider">Apache Kafka</span>
+<span class="px-3 py-1 bg-surface-container-highest text-primary-fixed-dim text-xs font-semibold rounded uppercase tracking-wider">WebAssembly</span>
+<span class="px-3 py-1 bg-surface-container-highest text-primary-fixed-dim text-xs font-semibold rounded uppercase tracking-wider">Next.js 14</span>
+<span class="px-3 py-1 bg-surface-container-highest text-primary-fixed-dim text-xs font-semibold rounded uppercase tracking-wider">PostgreSQL</span>
+<span class="px-3 py-1 bg-surface-container-highest text-primary-fixed-dim text-xs font-semibold rounded uppercase tracking-wider">Kubernetes</span>
+<span class="px-3 py-1 bg-surface-container-highest text-primary-fixed-dim text-xs font-semibold rounded uppercase tracking-wider">gRPC</span>
+</div>
+<div class="mt-16 p-8 bg-surface-container-low rounded-xl border border-outline-variant/10">
+<h3 class="font-headline text-lg font-bold text-white mb-4">Project Impact</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">speed</span>
+<p class="text-sm text-on-surface-variant">99.8% reduction in latency for data ingestion.</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">database</span>
+<p class="text-sm text-on-surface-variant">Capable of handling 2.5 million events per second.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="lg:col-span-8 space-y-16">
+<div>
+<h2 class="font-headline text-3xl font-bold mb-6 text-white">The Challenge</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-6 font-light">
+                        Medical diagnostic centers were struggling with massive bottlenecks in brain-computer interface (BCI) telemetry. Traditional cloud architectures introduced latencies that rendered real-time neuro-feedback impossible. The volume of data—terabytes per hour—overwhelmed existing relational databases.
+                    </p>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="p-8 bg-surface-container rounded-xl border-l-4 border-secondary">
+<h3 class="font-headline text-xl font-bold text-white mb-4">The Problem</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            Data fragmentation and network jitter caused critical delays in signal processing, leading to inaccurate diagnostic modeling for patients.
+                        </p>
+</div>
+<div class="p-8 bg-surface-container rounded-xl border-l-4 border-primary">
+<h3 class="font-headline text-xl font-bold text-white mb-4">The Solution</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            Developed a custom-built processing engine in Rust that utilizes memory-safe concurrency and zero-copy deserialization via gRPC.
+                        </p>
+</div>
+</div>
+<div>
+<h2 class="font-headline text-3xl font-bold mb-6 text-white">Design Philosophy</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed font-light">
+                        The interface needed to reflect the precision of the backend. We opted for a high-contrast, dark-mode dashboard that prioritizes critical wave-form data, using the Kinetic Architect principles of tonal depth and zero-line boundaries.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Visual Gallery -->
+<section class="max-w-7xl mx-auto px-6 mb-40">
+<h2 class="font-headline text-4xl font-extrabold tracking-tighter mb-12 text-center md:text-left">Architecture &amp; UI</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="aspect-square bg-surface-container rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist technical dashboard showing complex data visualizations with neon blue graphs on deep charcoal background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2cm9-q724onGQR67FcLIMGDepvo_sqKjHYOMRJ3lA-5HeVycN3QalMSIILPCKLq-eDzxzLcWykFwSijEtLB_cuNU7v3Rzgl02CP1Mk19_P7Aew4emf4o2Q1lmVDCit1rnatka1uM4vgHTfDtJPe7aerDaUVHLcksu0lrYav309gbcbGFAxIQXZMbYe5vD99i6ND1ruw3bOB_UF27iduYgnkYWQGGCk8YcIkYM-hwGD_Hzh1E_9oU_XwQbsSWX7jCJKvXv-QiO_i4"/>
+</div>
+<div class="flex flex-col gap-8">
+<div class="flex-1 bg-surface-container-low rounded-xl p-8 border border-outline-variant/10 flex flex-col justify-center">
+<span class="material-symbols-outlined text-5xl text-violet-400 mb-4" data-icon="schema">schema</span>
+<h3 class="font-headline text-2xl font-bold text-white mb-2">Micro-kernel Architecture</h3>
+<p class="text-on-surface-variant">The system is modular by design, allowing specialized processing nodes to be hot-swapped without system downtime.</p>
+</div>
+<div class="flex-1 bg-surface-container rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Macro photography of a high-end circuit board with glowing light traces and architectural precision" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjfavYGpaQiiBHswRDL5e9UtLx87mQp0W3ul50B1_VAZxICrD6y_n3jXV-8RIHavxsdHBuwCJ5VVUpCT5a2_ad8EK9qRUHc_ikZePUobj-xVSneOf6wz8a4nlF0oVTqXY8-Pjdupz0dJeZjugi3cU-TibI7hKhN5BEbwMRkVjCOp7Bs4SRd-q2R-h3kMTTsfE61riAi3Zy7bkOvfdptqeP_7f2bUZKtIZcqOVGzaxIlBU1_L_YWh0DgLM-a5Mlt8rE2trDnjsXkJM"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="max-w-7xl mx-auto px-6">
+<div class="bg-gradient-to-br from-surface-container-high to-surface-container-lowest p-12 md:p-20 rounded-3xl border border-outline-variant/10 text-center">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter text-white mb-6">Interested in the source?</h2>
+<p class="text-on-surface-variant text-lg max-w-xl mx-auto mb-10">NeuralFlow is partially open-source. Explore the core engine implementation and the telemetry documentation on GitHub.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="px-8 py-4 bg-primary text-on-primary font-bold rounded hover:bg-primary-container transition-all flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+                        View Repository
+                    </a>
+<a class="px-8 py-4 border border-outline-variant/30 text-white font-bold rounded hover:bg-surface-container-highest transition-all flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                        Case Study PDF
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950">
+<div class="w-full py-12 border-t border-neutral-800/30">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-6">
+<div class="text-lg font-bold text-neutral-50">ARCHITECT</div>
+<div class="flex gap-8 font-inter text-sm uppercase tracking-widest text-neutral-500">
+<a class="hover:text-blue-400 transition-colors" href="#">GitHub</a>
+<a class="hover:text-blue-400 transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-blue-400 transition-colors" href="#">Twitter</a>
+<a class="hover:text-blue-400 transition-colors" href="#">Email</a>
+</div>
+<div class="font-inter text-sm uppercase tracking-widest text-neutral-500 text-center md:text-right">
+                    © 2024 KINETIC ARCHITECT. BUILT WITH PRECISION.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>

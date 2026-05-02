@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#502400",
+                        "on-primary": "#002e6a",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary": "#3c0091",
+                        "on-tertiary-fixed": "#311400",
+                        "primary-fixed-dim": "#adc6ff",
+                        "tertiary": "#ffb786",
+                        "inverse-primary": "#005ac2",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed": "#ffdcc6",
+                        "surface-bright": "#3a3939",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "on-secondary-container": "#c4abff",
+                        "on-tertiary-container": "#461f00",
+                        "surface": "#131313",
+                        "secondary": "#d0bcff",
+                        "on-surface-variant": "#c2c6d6",
+                        "outline-variant": "#424754",
+                        "primary-container": "#4d8eff",
+                        "secondary-container": "#571bc1",
+                        "on-primary-fixed-variant": "#004395",
+                        "error": "#ffb4ab",
+                        "background": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "on-primary-fixed": "#001a42",
+                        "surface-dim": "#131313",
+                        "surface-container-highest": "#353534",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed": "#d8e2ff",
+                        "on-secondary-fixed": "#23005c",
+                        "secondary-fixed": "#e9ddff",
+                        "surface-tint": "#adc6ff",
+                        "on-error": "#690005",
+                        "primary": "#adc6ff",
+                        "tertiary-container": "#df7412",
+                        "outline": "#8c909f",
+                        "on-primary-container": "#00285d",
+                        "surface-variant": "#353534",
+                        "surface-container": "#201f1f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift {
+            transition: background-color 0.3s ease;
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-900/70 backdrop-blur-xl shadow-2xl shadow-blue-500/10">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto font-headline tracking-tight">
+<div class="text-xl font-black text-white tracking-tighter">
+                The Kinetic Architect
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">Home</a>
+<a class="text-blue-400 font-bold border-b-2 border-blue-400 pb-1" href="#">Projects</a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">About</a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-5 py-2 font-bold transition-transform scale-95 active:scale-90 hover:shadow-[0_0_15px_rgba(173,198,255,0.3)]">
+                    Resume
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- PageHeader -->
+<header class="max-w-7xl mx-auto px-6 mb-20">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<h1 class="font-headline text-6xl md:text-8xl font-extrabold tracking-tighter text-white mb-6">
+                        My Projects
+                    </h1>
+<p class="text-on-surface-variant text-xl leading-relaxed max-w-xl">
+                        A selection of my recent works. Engineered for performance, designed for human interaction.
+                    </p>
+</div>
+<div class="hidden md:block">
+<span class="text-neutral-500 font-mono text-sm tracking-widest uppercase">/ Selected Works 2024</span>
+</div>
+</div>
+</header>
+<!-- ProjectGrid -->
+<section class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project Card 1 -->
+<div class="group bg-surface-container-low transition-all duration-300 hover:scale-[1.02] hover:bg-surface-container-high relative overflow-hidden flex flex-col">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" data-alt="Futuristic cyber security dashboard with neon blue glowing data visualizations on dark obsidian glass background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2Zn2vKXWsggiWC8BwYl_pjSCh9nCgAFZ-HWJ-SSRksP_3jT6oHV0YgIBAuAG_4bBK8pL8XlU1ioUGjdAeGjVaU6hAV20IpVfPnKV3wyBUT_aKwdt4LJEFnOYCX0CE81F0DO_IcHucDsPVk7Scqjg6Izp4MX-XJ5vLG5L2UdStuLLdD8KMwCWz4NpAHZVy8N8HWMm3ckY96BCiFzw3xCwNmbckHCdI_vN4cPcGBq5XGdhLtrh1yicn_uBN0ucKZ3eWsPJOML2vax8"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest bg-surface-container-highest px-2 py-1 rounded-sm text-primary">React</span>
+<span class="text-[10px] font-bold uppercase tracking-widest bg-surface-container-highest px-2 py-1 rounded-sm text-primary">GraphQL</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-white mb-3 tracking-tight">Aegis Security Engine</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8 flex-grow">
+                            Real-time threat detection system utilizing distributed edge computing and reactive data pipelines.
+                        </p>
+<div class="flex items-center gap-6 mt-auto">
+<a class="text-primary font-bold text-sm flex items-center gap-1 group/link" href="#">
+                                View Case Study 
+                                <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="text-neutral-500 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">code</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group bg-surface-container-low transition-all duration-300 hover:scale-[1.02] hover:bg-surface-container-high relative overflow-hidden flex flex-col">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" data-alt="Abstract dynamic 3D waves in deep purple and violet hues with metallic texture and sharp lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxNI2cXSBfkhdfq0C5MI8sKZ9QqJSkszyR7KqgAJNz0gz446jtP7qMfif0an_VhkjKoH92ivqugwLQ-mcig8S-bqWAYW_xDeVkcwwgUIZ6YT_VE309X0e0BtYbtvvk_5xvs_9Kg-SnrACvYYzXPZJWMgWlvLn9Ge-yWbPucEuIyK_IjSLfkXTkNOzya7_4XzwYfYNAUFyGKqATPJ17g3hbR2mqAicDzZRwoj1-lG0_aCTxSh8tHffyvuNa3KJZ7sXdop8meGlrvSo"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest bg-surface-container-highest px-2 py-1 rounded-sm text-secondary">Next.js</span>
+<span class="text-[10px] font-bold uppercase tracking-widest bg-surface-container-highest px-2 py-1 rounded-sm text-secondary">Tailwind</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-white mb-3 tracking-tight">Kinetic Motion API</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8 flex-grow">
+                            An editorial-first animation framework for developers focusing on high-performance web transitions.
+                        </p>
+<div class="flex items-center gap-6 mt-auto">
+<a class="text-primary font-bold text-sm flex items-center gap-1 group/link" href="#">
+                                Documentation 
+                                <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="text-neutral-500 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">code</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project Card 3 (Featured Large) -->
+<div class="group lg:col-span-1 bg-surface-container-low transition-all duration-300 hover:scale-[1.02] hover:bg-surface-container-high relative overflow-hidden flex flex-col">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" data-alt="Minimalist architectural structure with clean lines and sharp shadows in a monochromatic obsidian grey palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcABIzJ0HQCZkytAfXCqpRANGmiYaXqVmeHJxbgcDHoDlh2QA_C7AJ9baWS1p5ux-3OKBSTYMlaZlVKF9sNT3dZ1GJo4ZZzksY-e4WlxA_DM5iqxhXZ4PEaKZil4h_LifkOJPHAtPC-DWki_ROjmj7jgfgAjx-Zgo4B4_X_14VAGFoVuHHDbzO95pbz-BVESEULaXHeuXiXIbRiS5ScJZF3qisSkRsZfjtZ0UvD8fGl-Q15P-JgIUKBq3OLftb55N25gWxTeUX-EE"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest bg-surface-container-highest px-2 py-1 rounded-sm text-primary">TypeScript</span>
+<span class="text-[10px] font-bold uppercase tracking-widest bg-surface-container-highest px-2 py-1 rounded-sm text-primary">Rust</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-white mb-3 tracking-tight">Obsidian Core</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8 flex-grow">
+                            A systems-level interface for local-first database synchronization with ultra-low latency.
+                        </p>
+<div class="flex items-center gap-6 mt-auto">
+<a class="text-primary font-bold text-sm flex items-center gap-1 group/link" href="#">
+                                Source File 
+                                <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="text-neutral-500 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">code</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="group bg-surface-container-low transition-all duration-300 hover:scale-[1.02] hover:bg-surface-container-high relative overflow-hidden flex flex-col">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" data-alt="Polygonal landscape of glowing neon lines representing a digital topographical map on a black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHvMrwVOrIN1g2sQ1FIHg-44JHQVY24XM_FsCB7RNJqXFtUSFhVwQ13AmJu5WXCGlmx3UMq7_xMUXxgxcXb3hzmI34SPEhyJYqgJjtSGvFHK-EayWwZGPj43NJmqPNiHP9JUVnNifKN0e3Q68QpTFUUTB3GdDihCBpkexS40aO59GkD9R3tr20OnDwRyqK-HxFpcyfrv1OF5d23Y7YmJM-1RUTJSX6x8zk5ienAyYlePPxQsBMEJoFVXVfivLgEqKZljL7JFshtlg"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest bg-surface-container-highest px-2 py-1 rounded-sm text-secondary">Three.js</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-white mb-3 tracking-tight">Voxel Mapper</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8 flex-grow">
+                            Interactive 3D visualization tool for mapping geographic data into performant voxel environments.
+                        </p>
+<div class="flex items-center gap-6 mt-auto">
+<a class="text-primary font-bold text-sm flex items-center gap-1 group/link" href="#">
+                                Demo 
+                                <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="text-neutral-500 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">code</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project Card 5 -->
+<div class="group bg-surface-container-low transition-all duration-300 hover:scale-[1.02] hover:bg-surface-container-high relative overflow-hidden flex flex-col">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" data-alt="Saturn-like planetary ring composed of digital data bits floating in deep space with soft blue nebula light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0bJB_1srODExWeAxTbRh4NJdGCmNukSTNI_ji3HRJ9jBtliyg8892n1o7YtHHaUAtY7k_d1W29c0yLiiQMcY2nhhDYLbXprVd8G1W8BE3PpqYccfHHuKT3TnX5C0a4AFflXuXYQP9FYLrmHcjCDSxfwk6-TAeXCXh7esIwLJ8jgNE-34TKQyp4SHiSIr9BIdYAkHYpaOY38zgdhA3Q7AgvRKmZXw1VZTL31U87xf8HbD0OpWuFqcFfRyWo8KhfRXDPqsQwBWFvas"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest bg-surface-container-highest px-2 py-1 rounded-sm text-primary">Node.js</span>
+<span class="text-[10px] font-bold uppercase tracking-widest bg-surface-container-highest px-2 py-1 rounded-sm text-primary">PostgreSQL</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-white mb-3 tracking-tight">Saturn DB</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8 flex-grow">
+                            A distributed SQL engine optimized for high-concurrency writes and hierarchical data structures.
+                        </p>
+<div class="flex items-center gap-6 mt-auto">
+<a class="text-primary font-bold text-sm flex items-center gap-1 group/link" href="#">
+                                View Paper 
+                                <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="text-neutral-500 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">code</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project Card 6 -->
+<div class="group bg-surface-container-low transition-all duration-300 hover:scale-[1.02] hover:bg-surface-container-high relative overflow-hidden flex flex-col">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" data-alt="Highly detailed macro shot of a microchip circuit board with electric blue current flowing through golden pathways" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Ty62QoLc5pbsF6TRbo0AIpN8Jy8lqZ95FRvH8O7nl_Y9dqJapuU1GYmIWFm3-MtioYJnWLIHbJVSw3YET6g03ue_sRGhobaCU8jj87dJ47TiVFyH9Qc7cjoAFs1UgIOXWIL6OHOSzFKggxSeDlsSHLP8cvpEXYGH4nAeitSm20QngHXIkBc46pcozLEW8KCxWYM29mdG1FUqjbkVSvSUhDE_KvPvpGWNGdIrvQ_ZTH9owoawe3sAQrVsJijbTOY3CNtkxfBjb2g"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest bg-surface-container-highest px-2 py-1 rounded-sm text-secondary">WebAssembly</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-white mb-3 tracking-tight">Cortex WASM</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8 flex-grow">
+                            An AI-inference bridge designed to run complex neural networks directly in the browser environment.
+                        </p>
+<div class="flex items-center gap-6 mt-auto">
+<a class="text-primary font-bold text-sm flex items-center gap-1 group/link" href="#">
+                                Launch App 
+                                <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="text-neutral-500 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">code</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-6 mt-32">
+<div class="bg-primary-container p-12 md:p-24 relative overflow-hidden flex flex-col items-center text-center">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20"></div>
+<h2 class="font-headline text-4xl md:text-6xl font-black text-white mb-8 relative z-10 tracking-tighter">
+                    Have a project in mind?
+                </h2>
+<button class="relative z-10 bg-white text-on-primary-fixed px-10 py-4 font-bold text-lg transition-transform hover:scale-105 active:scale-95 shadow-xl">
+                    Let's Build It
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 border-t border-white/5 w-full py-12 px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto font-inter text-sm">
+<div class="font-manrope font-bold text-white text-lg">
+                The Kinetic Architect
+            </div>
+<div class="flex gap-8">
+<a class="text-neutral-500 hover:text-blue-300 transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="text-neutral-500 hover:text-blue-300 transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-neutral-500 hover:text-blue-300 transition-colors opacity-80 hover:opacity-100" href="#">Twitter</a>
+<a class="text-neutral-500 hover:text-blue-300 transition-colors opacity-80 hover:opacity-100" href="#">Source Code</a>
+</div>
+<div class="text-neutral-500 text-center md:text-right">
+                © 2024 The Kinetic Architect. Engineered for performance.
+            </div>
+</div>
+</footer>
+</body></html>
