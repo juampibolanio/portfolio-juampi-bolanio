@@ -11,7 +11,7 @@ import { TechBadge } from "./TechBadge";
 
 export default function Stack() {
     return (
-        <section className="py-24 px-6 w-full bg-background" id="stack">
+        <section className="py-24 px-6 w-full bg-surface" id="stack">
             <div className="max-w-7xl mx-auto w-full flex flex-col gap-y-16">
 
                 <div className="flex flex-col gap-2">
@@ -26,7 +26,7 @@ export default function Stack() {
                 <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 md:auto-rows-fr">
 
                     {/* FRONTEND*/}
-                    <div className="md:col-span-2 group flex flex-col justify-center items-center text-center gap-2 rounded-3xl bg-surface p-8 border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/30 hover:shadow-[0_0_30px_-10px_rgba(34,211,238,0.2)]">
+                    <div className="md:col-span-2 group flex flex-col justify-center items-center text-center gap-2 rounded-3xl bg-background p-8 border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/30 hover:shadow-[0_0_30px_-10px_rgba(34,211,238,0.2)]">
                         <FaLaptopCode className="text-4xl text-cyan-400 mb-2 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3" />
                         <h3 className="text-xl font-headline font-bold text-white mb-6">Frontend Architecture</h3>
 
@@ -41,7 +41,7 @@ export default function Stack() {
                     </div>
 
                     {/* BACKEND */}
-                    <div className="md:col-span-1 group flex flex-col justify-center items-center text-center gap-2 rounded-3xl bg-surface p-8 border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:border-emerald-400/30 hover:shadow-[0_0_30px_-10px_rgba(52,211,153,0.2)]">
+                    <div className="md:col-span-1 group flex flex-col justify-center items-center text-center gap-2 rounded-3xl bg-background p-8 border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:border-emerald-400/30 hover:shadow-[0_0_30px_-10px_rgba(52,211,153,0.2)]">
                         <FaServer className="text-4xl text-emerald-400 mb-2 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3" />
                         <h3 className="text-xl font-headline font-bold text-white mb-6">Backend</h3>
 
@@ -54,7 +54,7 @@ export default function Stack() {
                     </div>
 
                     {/* DATABASE & ORM  */}
-                    <div className="md:col-span-1 md:row-span-2 group flex flex-col justify-center items-center text-center gap-2 rounded-3xl bg-surface p-8 border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:border-purple-400/30 hover:shadow-[0_0_30px_-10px_rgba(192,132,252,0.2)]">
+                    <div className="md:col-span-1 md:row-span-2 group flex flex-col justify-center items-center text-center gap-2 rounded-3xl bg-background p-8 border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:border-purple-400/30 hover:shadow-[0_0_30px_-10px_rgba(192,132,252,0.2)]">
                         <FaDatabase className="text-4xl text-purple-400 mb-2 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3" />
                         <h3 className="text-xl font-headline font-bold text-white mb-6">Database & ORM</h3>
 
@@ -68,7 +68,7 @@ export default function Stack() {
                     </div>
 
                     {/* DEVOPS & TOOLS */}
-                    <div className="md:col-span-3 group flex flex-col justify-center items-center text-center gap-2 rounded-3xl bg-surface p-8 border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:border-rose-400/30 hover:shadow-[0_0_30px_-10px_rgba(251,113,133,0.2)]">
+                    <div className="md:col-span-3 group flex flex-col justify-center items-center text-center gap-2 rounded-3xl bg-background p-8 border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:border-rose-400/30 hover:shadow-[0_0_30px_-10px_rgba(251,113,133,0.2)]">
                         <FaTools className="text-4xl text-rose-400 mb-2 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3" />
                         <h3 className="text-xl font-headline font-bold text-white mb-6">DevOps & Herramientas</h3>
 
