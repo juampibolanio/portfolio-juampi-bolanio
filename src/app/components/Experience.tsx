@@ -64,11 +64,11 @@ export default function Experience() {
                             <div className="group relative">
                                 <div className="absolute -left-10.25 top-1.5 w-4 h-4 rounded-full bg-surface border-2 border-primary transition-all duration-500 group-hover:bg-primary group-hover:shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
                                 
-                                <p className="text-sm text-primary mb-1 font-semibold tracking-wide">2014 — 2018</p>
-                                <h4 className="font-headline text-xl font-bold text-white transition-colors duration-300">Ingeniería en Sistemas de Información</h4>
+                                <p className="text-sm text-primary mb-1 font-semibold tracking-wide">2024 - 2025</p>
+                                <h4 className="font-headline text-xl font-bold text-white transition-colors duration-300">Tecnicatura Universitaria en Programación</h4>
                                 <p className="text-neutral-400 text-sm mb-4">Universidad Tecnológica Nacional (UTN)</p>
                                 <p className="text-base text-neutral-300 max-w-md leading-relaxed transition-all duration-300 group-hover:text-neutral-100">
-                                    Especialización en Arquitectura de Software, Patrones de Diseño, e Infraestructura Cloud.
+                                    Formación en arquitectura de software, análisis de requerimientos, desarrollo y testing de aplicaciones web y móviles con tecnologías modernas.
                                 </p>
                             </div>
 

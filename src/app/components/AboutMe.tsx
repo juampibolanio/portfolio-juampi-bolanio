@@ -1,6 +1,6 @@
 export default function AboutMe() {
     return (
-        <section className="w-full py-24 px-6 relative bg-surface" id="about">
+        <section className="w-full py-24 px-6 relative bg-surface" id="sobre-mi">
             <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-12">
                 
                 <div className="md:col-span-1">

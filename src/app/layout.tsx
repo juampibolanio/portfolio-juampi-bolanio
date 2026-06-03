@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="dark">
+    <html lang="es" className="dark scroll-smooth">
       <body 
         className={`${inter.variable} ${manrope.variable} font-body bg-background text-on-surface antialiased overflow-x-hidden selection:bg-primary/30`}
       >

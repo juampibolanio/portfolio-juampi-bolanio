@@ -13,7 +13,7 @@ export default function Footer() {
                     
                     <div className="flex flex-col items-center md:items-start gap-3">
                         <Link href="/" className="text-2xl font-headline font-bold text-white tracking-wide hover:opacity-80 transition-opacity">
-                            JPBolanio<span className="text-primary">.dev</span>.
+                            JPBolanio<span className="text-primary">.dev</span>
                         </Link>
                         <p className="text-neutral-400 text-sm max-w-xs text-center md:text-left leading-relaxed">
                             Diseñando y desarrollando soluciones de software escalables y experiencias digitales premium.

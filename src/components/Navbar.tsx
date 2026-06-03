@@ -4,14 +4,14 @@ export default function Navbar() {
         <nav className="fixed top-0 w-full z-50 bg-background/80 px-6 py-4 backdrop-blur-md">
             <div className="flex justify-between items-center gap-8 max-w-7xl mx-auto w-full">
 
-                <a className="text-xl font-bold font-headline tracking-tight text-white" href="#main">
+                <a className="text-xl font-bold font-headline tracking-tight text-white" href="#inicio">
                     JPBolanio.dev
                 </a>
 
                 <div className="flex gap-8 font-light">
                     <a className="text-neutral-400 hover:text-neutral-100 transition-colors duration-300" href="#sobre-mi">Sobre Mí</a>
-                    <a className="text-neutral-400 hover:text-neutral-100 transition-colors duration-300" href="#stack">Stack</a>
                     <a className="text-neutral-400 hover:text-neutral-100 transition-colors duration-300" href="#experiencia">Experiencia</a>
+                    <a className="text-neutral-400 hover:text-neutral-100 transition-colors duration-300" href="#stack">Stack</a>
                     <a className="text-neutral-400 hover:text-neutral-100 transition-colors duration-300" href="#proyectos">Proyectos</a>
                     <a className="text-neutral-400 hover:text-neutral-100 transition-colors duration-300" href="#contacto">Contacto</a>
                 </div>

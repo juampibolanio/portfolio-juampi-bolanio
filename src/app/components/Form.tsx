@@ -12,7 +12,7 @@ interface IFormInput {
   message: string;
 }
 
-export default function Form() {
+export default function Contact() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm<IFormInput>();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -64,7 +64,7 @@ export default function Form() {
   };
 
   return (
-    <section className="py-24 px-6 w-full bg-background" id="form">
+    <section className="py-24 px-6 w-full bg-background" id="contacto">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         
         <div className="flex flex-col gap-10">
