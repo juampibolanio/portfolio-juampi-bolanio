@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/Navbar";
+import { Toaster } from "react-hot-toast";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
@@ -23,6 +25,32 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Toaster 
+          position="bottom-right"
+          toastOptions={{
+            
+            style: {
+              background: '#1e293b', 
+              color: '#fff',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '16px',
+              padding: '16px',
+            },
+            success: {
+              iconTheme: {
+                primary: '#22d3ee',
+                secondary: '#1e293b',
+              },
+            },
+            error: {
+              iconTheme: {
+                primary: '#ef4444', 
+                secondary: '#fff',
+              },
+            }
+          }}
+        />
+        <Footer />
       </body>
     </html>
   );
