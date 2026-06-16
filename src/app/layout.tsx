@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/common/components/Navbar";
 import { Toaster } from "react-hot-toast";
-import Footer from "@/components/Footer";
+import Footer from "@/common/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
