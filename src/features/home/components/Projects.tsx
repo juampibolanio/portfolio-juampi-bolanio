@@ -1,7 +1,14 @@
+'use client'
+
+import { useProjects } from "@/features/projects/hooks/useProjects";
 import ProjectCard from "./ProjectCard";
 import { SiNextdotjs, SiTailwindcss, SiSpring, SiPostgresql, SiReact, SiDocker, SiRedis, SiTypescript } from 'react-icons/si';
 
 export default function Projects() {
+    const { data, isLoading, isError } = useProjects();
+    
+    console.log(data);
+
     const projects = [
         {
             slug: "ecommerce-fintech",

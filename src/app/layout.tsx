@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/common/components/Navbar";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/common/components/Footer";
+import TanStackQueryProvider from "@/common/providers/TanStackQueryProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
@@ -20,37 +21,39 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="dark scroll-smooth">
-      <body 
+      <body
         className={`${inter.variable} ${manrope.variable} font-body bg-background text-on-surface antialiased overflow-x-hidden selection:bg-primary/30`}
       >
-        <Navbar />
-        {children}
-        <Toaster 
-          position="bottom-right"
-          toastOptions={{
-            
-            style: {
-              background: '#1e293b', 
-              color: '#fff',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              borderRadius: '16px',
-              padding: '16px',
-            },
-            success: {
-              iconTheme: {
-                primary: '#22d3ee',
-                secondary: '#1e293b',
+        <TanStackQueryProvider>
+          <Navbar />
+          {children}
+          <Toaster
+            position="bottom-right"
+            toastOptions={{
+
+              style: {
+                background: '#1e293b',
+                color: '#fff',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderRadius: '16px',
+                padding: '16px',
               },
-            },
-            error: {
-              iconTheme: {
-                primary: '#ef4444', 
-                secondary: '#fff',
+              success: {
+                iconTheme: {
+                  primary: '#22d3ee',
+                  secondary: '#1e293b',
+                },
               },
-            }
-          }}
-        />
-        <Footer />
+              error: {
+                iconTheme: {
+                  primary: '#ef4444',
+                  secondary: '#fff',
+                },
+              }
+            }}
+          />
+          <Footer />
+        </TanStackQueryProvider>
       </body>
     </html>
   );
