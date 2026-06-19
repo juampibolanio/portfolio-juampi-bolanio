@@ -1,4 +1,4 @@
-const BASE_API_URL = process.env.NEXT_API_URL || 'http://localhost:8080';
+const BASE_API_URL = process.env.NEXT_API_URL || 'http://localhost:8080/api';
 
 export async function fetchApi<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
     const url = `${BASE_API_URL}${endpoint}`;
