@@ -1,27 +1,14 @@
 'use client'
 
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { FaChevronLeft, FaChevronRight, FaArrowRight, FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Project } from '@/features/projects/interfaces/project.interface'
+import { IconMap } from '@/features/technologies/utils/icon-map'
 
-export interface TechItem {
-    name: string;
-    icon: React.ReactNode;
-}
-
-interface ProjectCardProps {
-    slug: string;
-    title: string;
-    description: string;
-    images: string[];
-    technologies: TechItem[];
-    githubUrl?: string;
-    liveUrl?: string;
-}
-
-export default function ProjectCard({ slug, title, description, images, technologies, githubUrl, liveUrl }: ProjectCardProps) {
+export default function ProjectCard({ slug, title, shortDescription, githubUrl, liveUrl, mediaFiles, technologies }: Project) {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
 
     const scrollPrev = useCallback(() => { if (emblaApi) emblaApi.scrollPrev() }, [emblaApi])
@@ -29,19 +16,19 @@ export default function ProjectCard({ slug, title, description, images, technolo
 
     return (
         <div className="flex flex-col md:flex-row bg-surface rounded-2xl overflow-hidden border border-white/5 transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_30px_-15px_rgba(34,211,238,0.3)] group">
-            
+
             <div className="w-full md:w-2/5 relative bg-neutral-900 border-b md:border-b-0 md:border-r border-white/5 h-62.5 md:h-auto">
                 <div className="overflow-hidden h-full" ref={emblaRef}>
                     <div className="flex h-full">
-                        {images.map((imgSrc, index) => (
-                            <div className="flex-[0_0_100%] min-w-0 relative h-full" key={index}>
-                                <Image 
-                                    src={imgSrc} 
+                        {mediaFiles.map((imgSrc, index) => (
+                            <div className="flex-[0_0_100%] min-w-0 relative h-full" key={imgSrc.uuid}>
+                                <Image
+                                    src={imgSrc.url}
                                     alt={`${title} - Vista ${index + 1}`}
-                                    fill 
+                                    fill
                                     className="object-cover object-top"
                                     sizes="(max-width: 768px) 100vw, 40vw"
-                                    priority={index === 0}
+                                    priority={imgSrc.main}
                                 />
                             </div>
                         ))}
@@ -74,15 +61,22 @@ export default function ProjectCard({ slug, title, description, images, technolo
                         )}
                     </div>
                 </div>
-                
+
                 <p className="text-neutral-400 text-sm leading-relaxed mb-6">
-                    {description}
+                    {shortDescription}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
-                    {technologies.map((tech, index) => (
-                        <span key={index} className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-[11px] font-medium text-neutral-300 tracking-wide">
-                            {tech.icon}
+                    {technologies.map((tech) => (
+                        <span
+                            key={tech.uuid}
+                            className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-[11px] font-lg text-neutral-300 tracking-wide"
+                        >
+                            {tech.iconUrl && IconMap[tech.iconUrl] ? (
+                                IconMap[tech.iconUrl]
+                            ) : (
+                                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                            )}
                             {tech.name}
                         </span>
                     ))}
