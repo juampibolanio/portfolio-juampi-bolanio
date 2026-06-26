@@ -26,7 +26,9 @@ export default function RootLayout({
       >
         <TanStackQueryProvider>
           <Navbar />
-          {children}
+          <main className="pt-20 min-h-screen">
+            {children}
+          </main>
           <Toaster
             position="bottom-right"
             toastOptions={{
