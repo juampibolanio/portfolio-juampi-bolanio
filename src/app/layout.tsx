@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/common/components/Navbar";
-import { Toaster } from "react-hot-toast";
-import Footer from "@/common/components/Footer";
 import TanStackQueryProvider from "@/common/providers/TanStackQueryProvider";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
@@ -25,14 +23,11 @@ export default function RootLayout({
         className={`${inter.variable} ${manrope.variable} font-body bg-background text-on-surface antialiased overflow-x-hidden selection:bg-primary/30`}
       >
         <TanStackQueryProvider>
-          <Navbar />
-          <main className="pt-20 min-h-screen">
-            {children}
-          </main>
+          {children}
+          
           <Toaster
             position="bottom-right"
             toastOptions={{
-
               style: {
                 background: '#1e293b',
                 color: '#fff',
@@ -41,20 +36,13 @@ export default function RootLayout({
                 padding: '16px',
               },
               success: {
-                iconTheme: {
-                  primary: '#22d3ee',
-                  secondary: '#1e293b',
-                },
+                iconTheme: { primary: '#22d3ee', secondary: '#1e293b' },
               },
               error: {
-                iconTheme: {
-                  primary: '#ef4444',
-                  secondary: '#fff',
-                },
+                iconTheme: { primary: '#ef4444', secondary: '#fff' },
               }
             }}
           />
-          <Footer />
         </TanStackQueryProvider>
       </body>
     </html>
