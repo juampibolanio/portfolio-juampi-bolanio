@@ -7,8 +7,8 @@ export interface Project {
     slug: string;
     shortDescription: string;
     fullDescription: string
-    githubUrl: string;
-    liveUrl: string;
+    githubUrl?: string;
+    liveUrl?: string;
     createdAt: string;
     featured: boolean;
     mediaFiles: Media[];
