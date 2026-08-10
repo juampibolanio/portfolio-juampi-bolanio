@@ -9,11 +9,11 @@ export const useProjects = () => {
     });
 };
 
-export const useProject = (slug: string) => {
+export const useProject = (id: string) => {
     return useQuery({
         queryKey: ['project'],
-        queryFn: () => projectService.getBySlug(slug),
+        queryFn: () => projectService.getById(id),
         staleTime: 1000 * 10,
-        enabled: !!slug,
+        enabled: !!id,
     });
 };

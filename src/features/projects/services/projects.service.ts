@@ -8,7 +8,7 @@ export const projectService = {
         });
     },
     getBySlug: async (slug: string) => {
-        return fetchApi<Project>(`/projects/${slug}`);
+        return fetchApi<Project>(`/projects/slug/${slug}`);
     },
     create: async (data: ProjectCreatePayload) => {
         return fetchApi<Project>('/projects', {
