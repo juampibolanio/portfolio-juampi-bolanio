@@ -14,7 +14,7 @@ export default function CreateProjectForm() {
 
     return (
         <form onSubmit={handleSubmit} className="flex flex-col gap-8 p-2">
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="md:col-span-2">
                     <label className="text-slate-300 text-sm font-bold block mb-1">Título del Proyecto *</label>
@@ -65,14 +65,14 @@ export default function CreateProjectForm() {
 
             <div className="flex flex-col gap-4">
                 <label className="text-slate-300 text-sm font-bold block">Archivos Multimedia (Imágenes o Videos) *</label>
-                
+
                 <div className="relative group w-full flex justify-center items-center p-8 border-2 border-dashed border-slate-600 hover:border-primary rounded-2xl bg-slate-800/30 hover:bg-slate-800/50 transition-all cursor-pointer">
-                    <input 
-                        type="file" 
-                        multiple 
-                        accept="image/*,video/*" 
-                        onChange={(e) => handleAddFiles(e.target.files)} 
-                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" 
+                    <input
+                        type="file"
+                        multiple
+                        accept="image/*,video/*"
+                        onChange={(e) => handleAddFiles(e.target.files)}
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                     />
                     <div className="text-center flex flex-col items-center pointer-events-none">
                         <FaCloudUploadAlt className="text-5xl text-slate-500 group-hover:text-primary mb-3 transition-colors" />
@@ -89,7 +89,7 @@ export default function CreateProjectForm() {
 
                             return (
                                 <div key={index} className={`relative group aspect-video rounded-xl overflow-hidden border-2 transition-all ${mainFileIndex === index ? 'border-primary shadow-[0_0_15px_rgba(34,211,238,0.3)]' : 'border-slate-700 hover:border-slate-500'}`}>
-                                    
+
                                     {isVideo ? (
                                         <div className="w-full h-full bg-slate-900 flex items-center justify-center relative">
                                             <video src={objectUrl} className="w-full h-full object-cover opacity-80" />
@@ -102,26 +102,26 @@ export default function CreateProjectForm() {
                                     )}
 
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-2">
-                                        
-                                        <button 
-                                            type="button" 
-                                            onClick={() => handleRemoveFile(index)} 
+
+                                        <button
+                                            type="button"
+                                            onClick={() => handleRemoveFile(index)}
                                             className="self-end p-1.5 bg-red-500/80 hover:bg-red-500 text-white rounded-full transition-colors"
                                             title="Eliminar archivo"
                                         >
                                             <FaTimes size={12} />
                                         </button>
 
-                                        <button 
-                                            type="button" 
-                                            onClick={() => setMainFileIndex(index)} 
+                                        <button
+                                            type="button"
+                                            onClick={() => setMainFileIndex(index)}
                                             className={`flex items-center justify-center gap-1.5 py-1 px-2 rounded-lg text-xs font-bold transition-colors ${mainFileIndex === index ? 'bg-primary text-slate-900' : 'bg-slate-700/80 text-white hover:bg-slate-600'}`}
                                         >
                                             <FaStar size={10} className={mainFileIndex === index ? 'text-slate-900' : 'text-primary'} />
                                             {mainFileIndex === index ? 'Portada Actual' : 'Hacer Portada'}
                                         </button>
                                     </div>
-                                    
+
                                     {mainFileIndex === index && (
                                         <div className="absolute top-2 left-2 bg-primary text-slate-900 text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow-lg group-hover:hidden">
                                             PORTADA
