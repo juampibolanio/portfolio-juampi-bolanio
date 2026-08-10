@@ -17,7 +17,7 @@ export default function AdminPage() {
         </div>
         
         <Link 
-          href="/administradores/nuevo-proyecto" 
+          href="/admin/proyectos/nuevo-proyecto" 
           className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary hover:bg-primary/90 text-background font-bold rounded-xl text-sm transition-all shadow-lg shadow-primary/20"
         >
           <FaPlus size={12} />
