@@ -10,7 +10,7 @@ export default function TechnologiesManager() {
   const [name, setName] = useState("");
   const [iconUrl, setIconUrl] = useState("");
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     handleCreate({ name, iconUrl }, () => {
       setName("");
@@ -47,7 +47,7 @@ export default function TechnologiesManager() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full mt-2 bg-primary hover:bg-primary/90 disabled:bg-slate-700 text-slate-950 disabled:text-slate-400 font-bold py-3 rounded-lg transition-all"
+              className="w-full mt-2 bg-primary hover:bg-primary/90 disabled:bg-slate-700 text-slate-950 disabled:text-slate-400 font-bold py-3 rounded-lg transition-all cursor-pointer"
             >
               {isSubmitting ? "Guardando..." : "Agregar Tecnología"}
             </button>
@@ -76,7 +76,7 @@ export default function TechnologiesManager() {
                   </div>
                   <button
                     onClick={() => handleDelete(tech.uuid)}
-                    className="p-2 text-slate-500 hover:text-red-400 hover:bg-red-400/10 rounded-md transition-all shrink-0 opacity-0 group-hover:opacity-100"
+                    className="p-2 text-slate-500 hover:text-red-400 hover:bg-red-400/10 rounded-md transition-all shrink-0 opacity-0 group-hover:opacity-100 cursor-pointer"
                   >
                     <FaTrashAlt size={14} />
                   </button>
