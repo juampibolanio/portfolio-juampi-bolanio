@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEditProject } from "@/features/projects/hooks/useEditProject";
 import { FaCloudUploadAlt, FaTimes, FaStar, FaFilm } from "react-icons/fa";
 
@@ -146,7 +147,7 @@ export default function EditProjectForm({ uuid }: EditProjectFormProps) {
                       <FaFilm className="absolute text-3xl text-white/70" />
                     </div>
                   ) : (
-                    <img src={media.url} alt="media" className="w-full h-full object-cover" />
+                    <Image src={media.url} alt="media" fill className="object-cover" sizes="100vw" unoptimized />
                   )}
 
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-2">
@@ -177,7 +178,7 @@ export default function EditProjectForm({ uuid }: EditProjectFormProps) {
                       <FaFilm className="absolute text-3xl text-white/70" />
                     </div>
                   ) : (
-                    <img src={objectUrl} alt="preview" className="w-full h-full object-cover" />
+                    <Image src={objectUrl} alt="preview" fill className="object-cover" sizes="100vw" unoptimized />
                   )}
 
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-2">
