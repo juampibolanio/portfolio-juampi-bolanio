@@ -1,16 +1,21 @@
 export const uploadToCloudinary = async (file: File) => {
-  const cloudinaryFormData = new FormData();
-  cloudinaryFormData.append("file", file);
-  cloudinaryFormData.append("upload_preset", process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET as string);
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("upload_preset", process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET as string);
 
   try {
+    const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
     const res = await fetch(
-      `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
-      { method: "POST", body: cloudinaryFormData }
+      `https://api.cloudinary.com/v1_1/${cloudName}/auto/upload`,
+      { method: "POST", body: formData }
     );
+
+    if (!res.ok) {
+      throw new Error("Upload failed");
+    }
+
     return await res.json();
   } catch (error) {
-    console.error("Error subiendo a Cloudinary:", error);
-    throw new Error("No se pudo subir la imagen");
+    throw new Error("Cloudinary upload error");
   }
 };
