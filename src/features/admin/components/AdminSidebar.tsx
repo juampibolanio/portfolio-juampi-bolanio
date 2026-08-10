@@ -19,8 +19,8 @@ export default function AdminSidebar() {
         
         <div className="flex items-center gap-3 px-2 py-1">
           <FaUserShield className="text-primary text-2xl" />
-          <span className="font-headline font-bold text-lg tracking-wider text-white">
-            DevPanel
+          <span className="font-headline font-bold text-md tracking-wider text-white">
+            JPBolanio
           </span>
         </div>
 
