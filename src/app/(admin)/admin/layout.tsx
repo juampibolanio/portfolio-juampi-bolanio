@@ -1,6 +1,7 @@
 
 import React from "react";
 import AdminSidebar from "@/features/admin/components/AdminSidebar";
+import LogoutButton from "@/common/components/LogoutButton";
 
 export default function AdminLayout({
   children,
@@ -23,6 +24,7 @@ export default function AdminLayout({
             <span className="text-xs bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700 text-slate-300 font-medium">
               Juan Pablo (Owner)
             </span>
+            <LogoutButton />
           </div>
         </header>
 
