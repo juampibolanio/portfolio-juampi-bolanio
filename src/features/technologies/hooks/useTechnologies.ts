@@ -38,6 +38,20 @@ export const useTechnologies = () => {
     }
   };
 
+  const handleUpdate = async (uuid: string, data: CreateTechnologyInput, onSuccess: () => void) => {
+    try {
+      setIsSubmitting(true);
+      const updatedTech = await technologyService.update(uuid, data);
+      setTechnologies((prev) => prev.map((t) => (t.uuid === uuid ? updatedTech : t)));
+      toast.success("Tecnología actualizada con éxito");
+      onSuccess();
+    } catch (error) {
+      toast.error("Error al actualizar tecnología");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const handleDelete = async (uuid: string) => {
     const confirmed = window.confirm("¿Seguro que deseas eliminar esta tecnología?");
     if (!confirmed) return;
@@ -56,6 +70,7 @@ export const useTechnologies = () => {
     isLoading,
     isSubmitting,
     handleCreate,
+    handleUpdate,
     handleDelete
   };
 };

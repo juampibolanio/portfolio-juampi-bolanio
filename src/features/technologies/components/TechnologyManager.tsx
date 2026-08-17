@@ -2,20 +2,35 @@
 
 import { useState } from "react";
 import { useTechnologies } from "../hooks/useTechnologies";
-import { FaTrashAlt, FaCode } from "react-icons/fa";
+import { FaTrashAlt, FaCode, FaEdit, FaTimes } from "react-icons/fa";
 import { IconMap } from "../utils/icon-map";
+import { Technology } from "../interfaces/technology.interface";
 
 export default function TechnologiesManager() {
-  const { technologies, isLoading, isSubmitting, handleCreate, handleDelete } = useTechnologies();
+  const { technologies, isLoading, isSubmitting, handleCreate, handleUpdate, handleDelete } = useTechnologies();
   const [name, setName] = useState("");
   const [iconUrl, setIconUrl] = useState("");
+  const [editingTech, setEditingTech] = useState<Technology | null>(null);
 
-  const onSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+  const resetForm = () => {
+    setName("");
+    setIconUrl("");
+    setEditingTech(null);
+  };
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    handleCreate({ name, iconUrl }, () => {
-      setName("");
-      setIconUrl("");
-    });
+    if (editingTech) {
+      handleUpdate(editingTech.uuid, { name, iconUrl }, resetForm);
+    } else {
+      handleCreate({ name, iconUrl }, resetForm);
+    }
+  };
+
+  const onEdit = (tech: Technology) => {
+    setEditingTech(tech);
+    setName(tech.name);
+    setIconUrl(tech.iconUrl);
   };
 
   return (
@@ -23,7 +38,16 @@ export default function TechnologiesManager() {
       
       <div className="lg:col-span-1">
         <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl sticky top-24">
-          <h2 className="text-xl font-bold text-white mb-6">Nueva Tecnología</h2>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-xl font-bold text-white">
+              {editingTech ? "Editar Tecnología" : "Nueva Tecnología"}
+            </h2>
+            {editingTech && (
+              <button onClick={resetForm} className="text-slate-400 hover:text-white transition-colors cursor-pointer">
+                <FaTimes size={16} />
+              </button>
+            )}
+          </div>
           <form onSubmit={onSubmit} className="flex flex-col gap-4">
             <div>
               <label className="text-slate-300 text-sm font-bold block mb-1">Nombre</label>
@@ -44,13 +68,25 @@ export default function TechnologiesManager() {
                 className="w-full p-3 bg-slate-800 text-white rounded-lg border border-slate-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
               />
             </div>
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full mt-2 bg-primary hover:bg-primary/90 disabled:bg-slate-700 text-slate-950 disabled:text-slate-400 font-bold py-3 rounded-lg transition-all cursor-pointer"
-            >
-              {isSubmitting ? "Guardando..." : "Agregar Tecnología"}
-            </button>
+            <div className="flex gap-3 mt-2">
+              {editingTech && (
+                <button
+                  type="button"
+                  onClick={resetForm}
+                  disabled={isSubmitting}
+                  className="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-lg transition-all cursor-pointer"
+                >
+                  Cancelar
+                </button>
+              )}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-primary hover:bg-primary/90 disabled:bg-slate-700 text-slate-950 disabled:text-slate-400 font-bold py-3 rounded-lg transition-all cursor-pointer"
+              >
+                {isSubmitting ? "Guardando..." : editingTech ? "Actualizar" : "Agregar"}
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -74,12 +110,20 @@ export default function TechnologiesManager() {
                       {tech.name}
                     </span>
                   </div>
-                  <button
-                    onClick={() => handleDelete(tech.uuid)}
-                    className="p-2 text-slate-500 hover:text-red-400 hover:bg-red-400/10 rounded-md transition-all shrink-0 opacity-0 group-hover:opacity-100 cursor-pointer"
-                  >
-                    <FaTrashAlt size={14} />
-                  </button>
+                  <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-all shrink-0">
+                    <button
+                      onClick={() => onEdit(tech)}
+                      className="p-2 text-slate-500 hover:text-primary hover:bg-primary/10 rounded-md transition-all cursor-pointer"
+                    >
+                      <FaEdit size={14} />
+                    </button>
+                    <button
+                      onClick={() => handleDelete(tech.uuid)}
+                      className="p-2 text-slate-500 hover:text-red-400 hover:bg-red-400/10 rounded-md transition-all cursor-pointer"
+                    >
+                      <FaTrashAlt size={14} />
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>

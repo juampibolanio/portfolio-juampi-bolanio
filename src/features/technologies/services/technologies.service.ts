@@ -13,6 +13,13 @@ export const technologyService = {
     });
   },
 
+  update: async (uuid: string, data: CreateTechnologyInput) => {
+    return fetchApi<Technology>(`/technologies/${uuid}`, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    });
+  },
+
   delete: async (uuid: string) => {
     return fetchApi(`/technologies/${uuid}`, {
       method: 'DELETE',
