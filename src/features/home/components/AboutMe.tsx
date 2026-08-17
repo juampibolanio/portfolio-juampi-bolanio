@@ -14,12 +14,15 @@ export default function AboutMe() {
 
                 <div className="md:col-span-2 flex flex-col gap-6 text-lg text-neutral-400 leading-relaxed font-light">
                     <p>
-                        I specialize in creating high-performance web applications that bridge the gap between complex backend logic and fluid user experiences. Currently serving as a Senior Developer, I focus on scalable cloud architectures and clean, maintainable codebases.
+                        Soy desarrollador desde el año 2024, especializado en el desarrollo backend para todo tipo de aplicaciones y sistemas. He trabajado en proyectos de gran impacto, desde portales web para medios de comunicación hasta sistemas de gestión empresarial. 
+                        Si bien me especializo en backend, he adquirido experiencia en el desarrollo fullstack, teniendo el trabajo de analizar, implementar y mantener tanto la lógica del servidor como la interfaz de usuario. Esto me permite tener una visión integral de los proyectos en los que participo, asegurando que cada componente funcione de manera eficiente y coherente respecto a los objetivos del negocio y las necesidades de los usuarios.
                     </p>
 
                     <p>
-                        With over 6 years of experience in the industry, I have led teams through high-stakes product launches and infrastructure migrations. My approach is rooted in the belief that software should be as resilient as it is beautiful.
+                        Me centro en el desarrollo backend con Java y Spring Framework, utilizando bases de datos relacionales como PostgreSQL y MySQL, siempre aplicando buenas prácticas de desarrollo y patrones de diseño para garantizar la escalabilidad y mantenibilidad del código. Busco crear sistemas seguros, en un entorno donde la seguridad de los datos es una prioridad. Además, tengo experiencia en la integración de servicios externos y APIs, lo que me permite ampliar las funcionalidades de las aplicaciones y mejorar la experiencia del usuario.
+                        Siempre busco seguir aprendiendo y mejorando mis habilidades, explorando nuevas tecnologías y metodologías de desarrollo para mantenerme actualizado en un campo que evoluciona rápidamente. Mi objetivo es contribuir al éxito de los proyectos en los que participo, aportando soluciones innovadoras y eficientes que generen valor para los usuarios y el negocio.
                     </p>
+
                 </div>
 
             </div>
