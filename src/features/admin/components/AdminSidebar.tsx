@@ -35,8 +35,8 @@ export default function AdminSidebar() {
                 href={link.href}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
                   isActive
-                    ? "bg-primary/10 text-primary border border-primary/20 font-semibold shadow-[0_0_15px_-3px_rgba(34,211,238,0.15)]" // Estilos si está ACTIVO
-                    : "text-slate-400 hover:text-white hover:bg-white/5 border border-transparent" // Estilos si está INACTIVO
+                    ? "bg-primary/10 text-primary border border-primary/20 font-semibold shadow-[0_0_15px_-3px_rgba(34,211,238,0.15)]"
+                    : "text-slate-400 hover:text-white hover:bg-white/5 border border-transparent"
                 }`}
               >
                 <Icon size={16} className={isActive ? "text-primary" : "text-slate-500"} />
@@ -52,7 +52,7 @@ export default function AdminSidebar() {
         className="flex items-center gap-3 px-4 py-3 rounded-xl text-red-400 hover:bg-red-500/10 text-sm font-semibold transition-all border border-transparent hover:border-red-500/20"
       >
         <FaSignOutAlt size={16} />
-        Volver al Home
+        Volver al portfolio
       </Link>
     </aside>
   );

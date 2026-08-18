@@ -18,7 +18,7 @@ export default function Contact() {
 
   const handleEmailClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    const user = "tu.correo"; 
+    const user = "juampi360786"; 
     const domain = "gmail.com"; 
     window.location.href = `mailto:${user}@${domain}`;
   };
@@ -74,12 +74,12 @@ export default function Contact() {
               ¿Listo para empezar?
             </h2>
             <p className="text-neutral-400 text-lg leading-relaxed max-w-md">
-              Actualmente estoy disponible para consultas de arquitectura y roles como desarrollador senior. Construyamos algo increíble juntos.
+              Actualmente estoy abierto a nuevas oportunidades y colaboraciones. Si tienes un proyecto en mente o simplemente quieres saludar, no dudes en enviarme un mensaje.
             </p>
           </div>
 
           <div className="flex flex-col gap-6">
-            <button onClick={handleEmailClick} className="flex items-center gap-4 group w-fit text-left">
+            <button onClick={handleEmailClick} className="flex items-center gap-4 group w-fit text-left cursor-pointer">
               <div className="p-4 bg-surface border border-white/5 rounded-2xl text-neutral-400 group-hover:text-primary group-hover:border-primary/30 transition-all duration-300">
                 <FaEnvelope size={24} />
               </div>
@@ -88,12 +88,12 @@ export default function Contact() {
               </p>
             </button>
 
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="flex items-center gap-4 group w-fit">
+            <a href="https://linkedin.com/in/juampibolanio" target="_blank" rel="noreferrer" className="flex items-center gap-4 group w-fit cursor-pointer">
               <div className="p-4 bg-surface border border-white/5 rounded-2xl text-neutral-400 group-hover:text-primary group-hover:border-primary/30 transition-all duration-300">
                 <FaLinkedin size={24} />
               </div>
               <p className="text-neutral-300 font-medium group-hover:text-white transition-colors">
-                linkedin.com/in/tu-perfil
+                Conectate conmigo en LinkedIn
               </p>
             </a>
 
@@ -148,7 +148,7 @@ export default function Contact() {
             <button 
               type="submit"
               disabled={isSubmitting}
-              className={`mt-4 w-full text-background font-bold text-lg py-4 rounded-xl transition-all duration-300 shadow-[0_0_20px_-5px_rgba(34,211,238,0.4)] ${isSubmitting ? 'bg-primary/50 cursor-not-allowed' : 'bg-primary hover:bg-primary/90 hover:shadow-[0_0_30px_-5px_rgba(34,211,238,0.6)] hover:-translate-y-1'}`}
+              className={`mt-4 w-full text-background font-bold text-lg py-4 rounded-xl transition-all duration-300 shadow-[0_0_20px_-5px_rgba(34,211,238,0.4)] cursor-pointer ${isSubmitting ? 'bg-primary/50 cursor-not-allowed' : 'bg-primary hover:bg-primary/90 hover:shadow-[0_0_30px_-5px_rgba(34,211,238,0.6)] hover:-translate-y-1'}`}
             >
               {isSubmitting ? 'Enviando...' : 'Enviar mensaje'}
             </button>

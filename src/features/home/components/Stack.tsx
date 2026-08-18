@@ -2,9 +2,11 @@ import {
     FaLaptopCode, FaServer, FaDatabase, FaTools, FaAws, FaJava
 } from "react-icons/fa";
 import {
+    SiApachekafka,
     SiAstro, SiCss, SiDocker, SiGit, SiGithub, SiHibernate,
     SiHtml5, SiMysql, SiNestjs, SiNetlify, SiNextdotjs,
     SiNodedotjs, SiPostgresql, SiPostman, SiPrisma,
+    SiRabbitmq,
     SiReact, SiSpring, SiSqlite, SiTailwindcss
 } from "react-icons/si";
 import { TechBadge } from "./TechBadge";
@@ -13,7 +15,6 @@ export default function Stack() {
     return (
         <section className="py-24 px-6 w-full bg-surface" id="stack">
             <div className="max-w-7xl mx-auto w-full flex flex-col gap-y-16">
-
                 <div className="flex flex-col gap-2">
                     <span className="text-primary text-sm uppercase tracking-widest font-bold">
                         Tecnologías y herramientas
@@ -50,6 +51,8 @@ export default function Stack() {
                             <TechBadge icon={<SiSpring className="text-[#6DB33F]" />} name="Spring" />
                             <TechBadge icon={<SiNodedotjs className="text-[#339933]" />} name="Node.js" />
                             <TechBadge icon={<SiNestjs className="text-[#E0234E]" />} name="NestJS" />
+                            <TechBadge icon={<SiApachekafka className="text-[#fff]" />} name="Kafka" />
+                            <TechBadge icon={<SiRabbitmq className="text-[#FF6600]" />} name="RabbitMQ" />
                         </div>
                     </div>
 
@@ -81,7 +84,6 @@ export default function Stack() {
                             <TechBadge icon={<SiNetlify className="text-[#00C7B7]" />} name="Netlify" />
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>

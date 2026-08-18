@@ -49,7 +49,7 @@ export default function Projects() {
 
                     {!isLoading && !isError && featuredProjects.length === 0 && (
                         <p className="text-center text-slate-400">
-                            Aún estoy cocinando proyectos increíbles. ¡Vuelve pronto!
+                            Aún estoy trabajando en proyectos increíbles. ¡Vuelve pronto!
                         </p>
                     )}
                 </div>
