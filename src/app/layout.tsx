@@ -9,7 +9,7 @@ const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
 
 export const metadata: Metadata = {
   title: "Juan Pablo | Portfolio",
-  description: "Portfolio de Juan Pablo, Desarrollador Full Stack",
+  description: "Portfolio de Juan Pablo, Desarrollador Backend",
 };
 
 export default function RootLayout({
