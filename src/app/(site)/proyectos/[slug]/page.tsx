@@ -18,7 +18,6 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   } catch (error) {
     notFound();
   }
-
   const mainMedia = project.mediaFiles?.find((m) => m.main) || project.mediaFiles?.[0];
   const galleryMedia = project.mediaFiles?.filter((m) => !m.main && m.uuid !== mainMedia?.uuid) || [];
 
