@@ -1,3 +1,5 @@
+import { CloudinaryException } from "../exceptions/cloudinary-exception";
+
 export const uploadToCloudinary = async (file: File) => {
   const formData = new FormData();
   formData.append("file", file);
@@ -11,11 +13,11 @@ export const uploadToCloudinary = async (file: File) => {
     );
 
     if (!res.ok) {
-      throw new Error("Upload failed");
+      throw new CloudinaryException("Upload failed");
     }
 
     return await res.json();
   } catch (error) {
-    throw new Error("Cloudinary upload error");
+    throw new CloudinaryException("Cloudinary upload error: " + (error as Error).message);
   }
 };

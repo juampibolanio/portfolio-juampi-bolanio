@@ -24,7 +24,6 @@ export const projectService = {
     getById: async (uuid: string) => {
         return fetchApi<Project>(`/projects/${uuid}`);
     },
-
     update: async (uuid: string, data: ProjectCreatePayload) => {
         return fetchApi<Project>(`/projects/${uuid}`, {
             method: 'PUT',
