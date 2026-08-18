@@ -7,7 +7,7 @@ import { uploadToCloudinary } from "../services/cloudinary.service";
 export const useCreateProject = () => {
     const [files, setFiles] = useState<File[]>([]);
     const [mainFileIndex, setMainFileIndex] = useState<number>(0);
-    
+
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [status, setStatus] = useState("");
     const [availableTechs, setAvailableTechs] = useState<Technology[]>([]);
@@ -43,7 +43,7 @@ export const useCreateProject = () => {
         else if (mainFileIndex > indexToRemove) setMainFileIndex(prev => prev - 1);
     };
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         if (selectedTechs.length === 0) {
