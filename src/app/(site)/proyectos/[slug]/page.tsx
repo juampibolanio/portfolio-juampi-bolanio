@@ -26,7 +26,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
     <article className="max-w-7xl mx-auto px-6 mb-32 pt-12">
       <nav className="mb-10">
         <Link
-          href="/#proyectos"
+          href="/proyectos"
           className="group inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
         >
           <FaArrowLeft className="text-lg group-hover:-translate-x-1 transition-transform" />
@@ -34,10 +34,8 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         </Link>
       </nav>
 
-      {/* Cabecera reestructurada con Grid para dar más peso a la imagen */}
       <header className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center mb-20 border-b border-slate-800 pb-16">
-        
-        {/* Columna de Texto (5/12) */}
+
         <div className="lg:col-span-5 flex flex-col gap-6">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-full w-fit shadow-md">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
@@ -45,11 +43,11 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               {project.featured ? "Proyecto Destacado" : "Completado"}
             </span>
           </div>
-          
+
           <h1 className="font-headline font-extrabold text-4xl md:text-5xl lg:text-6xl tracking-tighter text-white leading-tight">
             {project.title}
           </h1>
-          
+
           <p className="text-lg md:text-xl text-slate-400 leading-relaxed font-light">
             {project.shortDescription}
           </p>
@@ -80,7 +78,6 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           </div>
         </div>
 
-        {/* Columna de Imagen Principal (7/12) */}
         {mainMedia && (
           <figure className="lg:col-span-7 w-full rounded-2xl bg-slate-900 shadow-2xl border border-slate-800 overflow-hidden relative group">
             {mainMedia.mediaType.startsWith("video") ? (
@@ -181,7 +178,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         <div className="bg-slate-900 p-10 md:p-16 rounded-3xl border border-slate-800 text-center relative overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-          
+
           <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 relative z-10">
             ¿Interesado en el código fuente?
           </h2>
