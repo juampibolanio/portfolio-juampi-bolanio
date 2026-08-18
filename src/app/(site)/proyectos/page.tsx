@@ -1,6 +1,7 @@
 import { projectService } from "@/features/projects/services/projects.service";
 import ProjectGridCard from "@/features/projects/components/ProjectGridCard";
 import Link from "next/link";
+import { Project } from "@/features/projects/interfaces/project.interface";
 
 export const metadata = {
   title: "Mis Proyectos | Portfolio",
@@ -8,7 +9,7 @@ export const metadata = {
 };
 
 export default async function ProjectsPage() {
-  let projects = [];
+  let projects: Project[] = [];
 
   try {
     projects = await projectService.getAll();
